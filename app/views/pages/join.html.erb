@@ -1,0 +1,54 @@
+<% content_for :css do %>
+<style>
+
+</style>
+<% end %>
+
+<div id="content">
+  <div id="join-bg" data-stellar-background-ratio="0.05">
+    <div class="container page-caption-container"> 
+      <div class="caption-content">
+        <div id="join-title-container" class="page-title-container">
+          <p class="page-title">JOIN OUR SPONSORSHIP PROGRAM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-content-section container">
+    <% if @application_sent == true %>
+      <h1>Thank you for your interest!</h1>
+      <h2>Your application has been submitted successfully! We will follow up with you for more information.</h2>
+      <%=link_to 'Back to home', '/', :class => "btn-back-to-home btn btn-primary btn-lg"%>
+    <% else %>
+      <div class='col-lg-8 col-md-8 col-xs-12'>
+        <h1>We just want to know more about you...</h1>
+        <div>
+          <% flash.each do |key, value| %>
+            <div>
+              <a href="#" data-dismiss="alert">×</a>
+                <%= value %>
+            </div>
+          <% end %>
+        </div>
+        <%= simple_form_for @application, :url => send_application_path, :html => {:class => 'join-form' } do |f| %>
+          <%= f.input :name, :required => true %>
+          <%= f.input :email, :required => true %>
+          <%= f.input :personal_website_or_profile, :required => false%>
+          <%= f.input :intro_about_yourself, :as => :text, :required => true %>
+          <div class= "hidden">
+            <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+          </div>
+          <div>
+            </br>
+            <%= f.button :submit, 'Submit', :class=> "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-md-4 col-lg-4" id="join-question-container">
+        <p>Not sure about how the program works?</p>
+        <%=link_to 'Learn more about it', '#', :class => "btn btn-primary"%>
+      </div>
+    <% end %>
+    
+  </div>
+</div>

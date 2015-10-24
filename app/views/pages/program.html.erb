@@ -1,0 +1,71 @@
+<% content_for :css do %>
+<style>
+
+</style>
+<% end %>
+
+<div id="content">
+  <div id="program-bg" data-stellar-background-ratio="0.05">
+    <div class="container page-caption-container"> 
+      <div class="caption-content">
+        <div id="program-title-container" class="page-title-container">
+          <p class="page-title">GIVE MORE &#8226; GAIN MORE</p>
+        </div>
+        <%=link_to 'Become a sponsor', 'join',:class => "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="page-content-section container">
+    <div class="col-xs-12">
+      <h1>How does it work? (Coming soon)</h1>
+    </div>
+    <div class='col-md-7 col-xs-12'>
+      <%= image_tag("programdiagram.png" ,:id => "program-illustration") %>
+    </div>
+    <div class='col-md-5 col-xs-12'>
+      <ul id="program-bullets">
+        <li>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </li> 
+        <li>
+          Aenean euismod bibendum laoreet.
+        </li> 
+        <li>
+          Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
+        </li> 
+        <li>
+          Proin sodales pulvinar tempor.
+        </li> 
+        <li>
+          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </li> 
+      </ul>
+      <div class="container-fluid" id="download-link-container">
+        <%=link_to 'Download full document (PDF)', '#', :id => 'btn-download-doc', :class => "disabled btn btn-primary"%>
+        <br>(Coming soon)
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <h1>Our sponsors think...(Coming soon)</h1>
+    </div>
+    <div class="col-xs-12 col-md-4 avatar-container">
+      <%= image_tag("avatar.png" ,:class => "sponsor-avatar") %>
+      <p class="sponsor-name">Toro Gu</p>
+      <p class="quote-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. "
+      </p>
+    </div>
+    <div class="col-xs-12 col-md-4 avatar-container">
+      <%= image_tag("avatar.png" ,:class => "sponsor-avatar") %>
+      <p class="sponsor-name">Sissi Yu</p>
+      <p class="quote-content">"Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."</p>
+    </div>
+    <div class="col-xs-12 col-md-4 avatar-container">
+      <%= image_tag("avatar.png" ,:class => "sponsor-avatar") %>
+      <p class="sponsor-name">Landy Zhu</p>
+      <p class="quote-content">"Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."</p>
+    </div>
+    <div class="col-xs-12" id="btn-become-sponsor-program">
+      <%=link_to 'Become a sponsor now', 'join',:class => "btn btn-primary btn-lg" %>
+    </div>
+  </div>
+</div>

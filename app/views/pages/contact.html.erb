@@ -1,0 +1,53 @@
+<% content_for :css do %>
+<style>
+
+</style>
+<% end %>
+
+<div id="content">
+  <div id="contact-bg" data-stellar-background-ratio="0.05">
+    <div class="container page-caption-container"> 
+      <div class="caption-content">
+        <div id="contact-title-container" class="page-title-container">
+          <p class="page-title">KEEP IN TOUCH</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-content-section container">
+    <% if @message_sent == true %>
+      <h1>Thank you for your message!</h1>
+      <h2>Your message has been submitted successfully! We will follow up with you for more information.</h2>
+      <%=link_to 'Back to home', '/', :class => "btn-back-to-home btn btn-primary btn-lg"%>
+    <% else %>
+      <div class='col-lg-8 col-md-8 col-xs-12'>
+        <h1>We are listening</h1>
+        <div>
+          <% flash.each do |key, value| %>
+            <div>
+              <a href="#" data-dismiss="alert">×</a>
+                <%= value %>
+            </div>
+          <% end %>
+        </div>
+        <%= simple_form_for @message, :url => send_message_path, :html => {:class => 'contact-form' } do |f| %>
+          <%= f.input :name, :required => true %>
+          <%= f.input :email, :required => true %>
+          <%= f.input :message, :as => :text, :required => true %>
+          <div class= "hidden">
+            <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+          </div>
+          <div>
+            </br>
+            <%= f.button :submit, 'Send', :class=> "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-md-4 col-lg-4" id="contact-other-container">
+        <p>Or find us here:</p>
+        
+      </div>
+    <% end %>
+    
+  </div>
+</div>
