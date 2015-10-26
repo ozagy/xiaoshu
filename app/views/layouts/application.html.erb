@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -52,12 +52,12 @@
     </div>  
   </footer>
 
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application' %>
 <script type="text/javascript">
 $(document).ready(function(){
   $('.full-height').height($(window).height());
   //$('.active-bg').css('background-size','auto '+$(window).height()+'px');
-  $.stellar({horizontalScrolling:false,verticalOffset:40});
+  //$.stellar({horizontalScrolling:false,verticalOffset:40});
   
   $('.gallery-photo').each(function(i,obj){
     var image_str = $(this).attr('image');
@@ -68,13 +68,14 @@ $(document).ready(function(){
   
   $(window).resize(function(){
     $('.full-height').height($(window).height());
-    //$('.active-bg').css('background-size','auto '+$(window).height()+'px');
+    // //$('.active-bg').css('background-size','auto '+$(window).height()+'px');
   });
+  //
   
   $('#scrolldown').click(function(e){
-    $('body').animate({scrollTop:$(window).height()}, '3000' );
+    $('html, body').animate({scrollTop:($(window).height()-60)}, 1000, 'swing');
   });
-  
+
 });
 </script>
 

@@ -15,6 +15,5 @@
 //= require stellar
 //= require npm
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
