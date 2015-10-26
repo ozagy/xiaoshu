@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require bootstrap
-//= require stellar
 //= require npm
 //= require jquery_ujs
 //= require_tree .

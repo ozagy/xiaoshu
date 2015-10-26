@@ -8,7 +8,7 @@
         </div>
       </div>
     </div>
-    <div id="scrolldown"><%= image_tag("chevron.png" ,:id => "chevron", :class => "animated bounce", :alt => "Scrolldown") %></div>
+    <div id="scrolldown"><%= image_tag("chevron.png" ,:id => "chevron", :class => "animated", :alt => "Scrolldown") %></div>
   </div>
   <div id="intro-section" class="content-section container">
     <%= image_tag("xiaoshulogo.png" ,:id => "large-logo", :alt => "XiaoShu") %>
@@ -50,7 +50,7 @@
   <div id="gallery-section" class="content-section container">
     <div id="gallery-photo-container" class="col-lg-11 col-xs-12">
       <% for i in 1..15 %>
-        <div class="gallery-photo" image="image<%= i.to_s %>").jpg"></div>
+        <div class="gallery-photo" image="image<%= i.to_s %>" id="gallery-photo-<%= i.to_s %>"></div>
         <%= image_tag("xiaoshugallery/image"+i.to_s+'.jpg',:id => "image"+i.to_s, :class => 'hidden gallery-img') %>
       <% end %>
     </div>
