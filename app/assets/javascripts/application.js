@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require bootstrap
-//= require npm
+//= require parallax
 //= require jquery_ujs
 //= require_tree .
-
