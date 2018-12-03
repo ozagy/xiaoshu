@@ -10,7 +10,7 @@ class Application < MailForm::Base
   def headers
     {
       :subject => "Application from Xiaoshu Website",
-      :to => "chenbinyan130@gmail.com",
+      :to => "mayijun1203@live.cn",
       :from => %("#{name}" <#{email}>)
     }
   end
